@@ -1,0 +1,496 @@
+#include<conio.h>
+#include<graphics.h>
+#define Max 100
+int main()
+{
+  int gd=DETECT,gm;
+	int i,j,i1,j1,area,area1;
+	int head1[Max] ={27,344,26,340,24,335,25,330,29,327,35,325,39,325,43,328,43,330,41,330,30,331,38,335,36,337,35,338,32,337,30,341,28,345,27,344};
+	int face1[Max] ={43,330,45,334,45,336,45,337,46,338,47,339,46,340,46,342,45,344,44,346,42,346,41,347,39,347,38,350,38,352,34,351,31,348,28,346,30,341,32,337,35,338,36,337,38,335,39,331,41,330,43,330};
+													int calar1[Max]={34,351,31,348,28,346,25,348,34,354,35,356,36,353,34,351};
+	int court1[Max]={25,348,24,350,20,352,17,354,14,361,11,368,10,381,10,387,34,407,40,398,22,381,23,378,28,369,28,367,27,362,28,367,28,369,23,378,20,390,18,405,18,412,43,412,49,411,47,400,44,395,44,380,43,374,40,367,36,360,36,356,36,360,40,367,43,374,44,366,41,358,40,352,36,353,35,356,34,354,25,348};
+	int r1leg[Max]={22,412,26,429,26,463,42,463,43,417,47,411,22,412};
+	int l1leg[Max]={25,463,34,474,24,473,15,468,12,468,8,463,12,458,26,443,25,463};
+	int shoe[Max]={37,463,37,467,51,470,50,472,34,472,26,467,29,463};
+	int a[20]={532,109,574,122,558,122,558,264,506,264,506,122,491,122,532,109};
+	int b[20]={23,122,38,122,38,264,90,264,90,122,106,122,64,109,23,122};
+	int c[20]={247,84,247,74,267,74,267,64,334,64,334,74,354,74,354,84,247,84};
+	int head[Max] ={27,344,26,340,24,335,25,330,29,327,35,325,39,325,43,328,43,330,41,330,30,331,38,335,36,337,35,338,32,337,30,341,28,345,27,344};
+	int face[Max] ={43,330,45,334,45,336,45,337,46,338,47,339,46,340,46,342,45,344,44,346,42,346,41,347,39,347,38,350,38,352,34,351,31,348,28,346,30,341,32,337,35,338,36,337,38,335,39,331,41,330,43,330};
+	int calar[Max]={34,351,31,348,28,346,25,348,34,354,35,356,36,353,34,351};
+	int court[Max]={25,348,24,350,20,352,17,354,14,361,11,368,10,381,7,392,6,404,16,406,20,390,23,378,28,369,28,367,27,362,28,367,28,369,23,378,20,390,18,405,18,412,43,412,49,411,47,400,44,395,44,380,43,374,40,367,36,360,36,356,36,360,40,367,43,374,44,366,41,358,40,352,36,353,35,356,34,354,25,348};
+	int rleg[Max]={47,411,49,421,51,431,52,436,40,448,33,457,28,465,25,464,34,473,24,473,17,470,15,468,11,468,8,463,11,459,25,464,11,459,23,445,36,432,24,416,23,412,43,412,47,411};
+	int lleg1[Max]={23,415,28,427,28,441,36,432,24,416,23,415};
+	int lleg2[Max]={37,450,36,460,37,465,44,469,51,471,50,473,34,472,25,465,28,464,32,459,37,450};
+	int lhand[Max]={44,385,49,389,52,393,57,397,58,402,56,405,52,400,50,400,52,393,50,400,44,398};
+	int aface[Max]={521,316,519,325,519,331,519,341,527,349,523,359,523,361,519,364,519,366,519,368,527,368,530,373,530,377,539,379,535,385,537,387,535,392,536,394,539,396,547,396,555,392,563,388,570,382,576,373,582,378,576,373,573,363,571,357,570,349,567,341,563,337,555,333,548,329,538,324,530,319,521,316};
+	int apu[Max]={523,339,527,337,534,334,540,335,547,335,555,338};
+	int aeye[Max]={529,344,535,346,538,348,541,350,537,351,537,353,534,353,531,351,534,353,533,349,536,346,535,346,529,344};
+	int ah1[Max]={520,316,523,309,527,303,533,297,542,293,553,290,567,290,578,293,586,295,592,300,596,304,601,310,606,316,612,327,618,341,623,353,633,369};
+	int ah2[Max]={527,316,530,305,544,302,559,301,572,307,578,316,584,326,588,334,596,343};
+	char *buff,*buff1;
+	int pshirt[Max]={423,344,407,353,398,371,406,375,414,361,410,367,412,402,446,401,446,368,450,377,457,373,451,355,440,348,436,347,429,351,418,349,423,344};
+	int ptrou[Max]={412,402,411,437,427,437,431,417,430,434,448,434,446,401,412,402};
+	int plleg[Max]={414,438,414,457,416,477,427,478,423,470,423,454,425,438,414,438};
+	int prleg[Max]={432,435,434,455,435,472,431,477,444,476,441,469,443,455,443,435,432,435};
+	int prhand[Max]={405,375,411,391,417,398,413,397,415,409,409,394,397,376,398,372,405,375};
+	int plhand[Max]={450,376,443,395,446,394,444,401,447,403,449,393,457,377,457,374,450,376};
+	initgraph(&gd,&gm,"c:/tc/bgi");
+	settextstyle(7,0,3);
+	outtextxy(150,150,"SAMACHEER KALVI");
+	delay(1000);
+	cleardevice();
+for(i=0;i<100;i++)
+{
+if(i%2==1)
+{
+head[i]-=45;
+face[i]-=45;
+calar[i]-=45;
+court[i]-=45;
+rleg[i]-=45;
+lleg1[i]-=45;
+lleg2[i]-=45;
+lhand[i]-=45;
+head1[i]-=45;
+face1[i]-=45;
+calar1[i]-=45;
+court1[i]-=45;
+l1leg[i]-=45;
+r1leg[i]-=45;
+shoe[i]-=45;
+}
+if(i%2==0)
+{
+head1[i]+=100;
+face1[i]+=100;
+calar1[i]+=100;
+court1[i]+=100;
+l1leg[i]+=100;
+r1leg[i]+=100;
+shoe[i]+=100;
+}
+}
+//Man
+	setfillstyle(1,DARKGRAY);
+	fillpoly(18,head);
+	setfillstyle(1,15);
+	fillpoly(26,face);
+	setfillstyle(1,1);
+	fillpoly(8,calar);
+ //	setfillstyle(1,1);
+	setfillstyle(1,16);
+	fillpoly(40,court);
+	fillpoly(23,rleg);
+	fillpoly(11,lhand);
+	fillpoly(6,lleg1);
+	fillpoly(11,lleg2);
+	line(24,465+45,37,465+45);
+	setfillstyle(1,15);
+	floodfill(23,468-45,WHITE);
+	floodfill(36,469-45,15);
+	putpixel(41,337-45,BLACK);
+	buff=(void*)malloc(imagesize(4,278,60,432));
+	getimage(4,278,60,432,buff);
+	//man2
+	setfillstyle(1,DARKGRAY);
+	fillpoly(18,head1);
+	setfillstyle(1,15);
+	fillpoly(26,face1);
+	setfillstyle(1,1);
+	fillpoly(8,calar1);
+	setfillstyle(2,16);
+	fillpoly(40,court1);
+	drawpoly(7,r1leg);
+	drawpoly(9,l1leg);
+	setfillstyle(1,15);
+	fillpoly(7,shoe);
+	line(111,415,128,421);
+	floodfill(118,423,15);
+	putpixel(41+100,337-45,BLACK);
+	buff1=(void*)malloc(imagesize(4+100,278,60+100,432));
+	getimage(4+100,278,60+100,432,buff1);
+	cleardevice();
+//leftside
+	setfillstyle(1,1);
+	rectangle(9,104,120,272); //left big
+	floodfill(10,105,WHITE);
+	setfillstyle(1,3);
+	fillpoly(8,b);
+	setfillstyle(1,1);
+	rectangle(48,122,80,255);//in rect
+	floodfill(49,123,WHITE);
+	setfillstyle(7,5);
+	rectangle(54,135,74,152);//win1
+	floodfill(55,136,WHITE);
+	rectangle(54,185,74,202);//win2
+	floodfill(55,186,WHITE);
+	rectangle(54,236,74,253);//win3
+	floodfill(55,237,WHITE);
+//left near
+	rectangle(122,118,247,211);
+	setfillstyle(1,1);
+	rectangle(122,118,247,121); //top shadow
+	floodfill(123,119,WHITE);
+	rectangle(354,118,475,121);
+	floodfill(355,119,WHITE);
+	rectangle(122,206,247,211);//bottom shadow
+	floodfill(123,207,WHITE);
+	setfillstyle(7,5);
+	rectangle(223,138,243,153); //win1
+	floodfill(224,139,WHITE);
+	rectangle(186,138,206,153); //win2
+	floodfill(187,139,WHITE);
+	rectangle(186,178,206,193);//win3
+	floodfill(187,179,WHITE);
+
+	line(247,124,169,124);
+	line(169,124,169,206);
+	line(247,136,183,136);
+	line(183,136,183,206);
+
+	line(247,155,212,155);
+	line(212,155,212,206);
+	line(247,167,224,167);
+	line(224,167,224,206);
+	setfillstyle(1,1);
+	rectangle(135,118,140,206); //left thoon
+	floodfill(137,130,WHITE);
+//right near
+	rectangle(354,118,475,211);
+	line(354,155,389,155);
+	line(389,155,389,206);
+	line(354,167,377,167);
+	line(377,167,377,206);
+
+	line(354,124,432,124);
+	line(432,124,432,206);
+	line(354,136,418,136);
+	line(418,136,418,206);
+	setfillstyle(7,5);
+	rectangle(358,138,378,153);//win 1
+	floodfill(359,139,WHITE);
+	rectangle(395,138,415,153);//win 2
+	floodfill(396,139,WHITE);
+	rectangle(395,178,415,193);//win 3
+	floodfill(396,179,WHITE);
+	setfillstyle(1,1);
+	rectangle(354,206,475,211); //bottom shadow
+	floodfill(355,207,WHITE);
+	setfillstyle(1,1);
+      //  setcolor(2);
+	rectangle(457,118,462,211); //right thoon
+	floodfill(460,169,WHITE);
+	setfillstyle(10,3);
+	floodfill(447,160,15);
+	setfillstyle(10,3);
+    //	floodfill(196,170,15);
+//	floodfill(151,154,15);
+//	floodfill(402,169,15);
+	setfillstyle(8,3);
+//	floodfill(468,175,15);
+//	floodfill(238,185,15);
+//	floodfill(365,186,15);
+ //	floodfill(129,178,15);
+//top bar
+	setfillstyle(6,1);
+	rectangle(120,104,247,118);//left top
+	floodfill(121,105,15);
+	rectangle(354,104,475,118);
+	floodfill(355,105,15);
+	rectangle(247,84,354,211);  //center box
+	setfillstyle(9,1);
+	line(268,84,268,211);
+	floodfill(269,85,WHITE);
+	setfillstyle(10,3);
+	line(289,84,289,211);
+	floodfill(254,147,WHITE);
+	floodfill(290,85,WHITE);
+	setfillstyle(9,1);
+	line(310,84,310,211);
+	floodfill(311,85,WHITE);
+	setfillstyle(10,3);
+	line(331,84,331,211);
+	floodfill(332,85,WHITE);
+//center top
+	setfillstyle(1,1);
+	fillpoly(9,c);
+//middle bar
+      //	rectangle(120,213,477,225);
+//right side
+	setfillstyle(1,1);
+	rectangle(477,104,588,272); //out rect
+	floodfill(488,203,15);
+	setfillstyle(1,3);
+	fillpoly(8,a);
+	setfillstyle(1,1);
+	rectangle(516,122,548,255); //in rect
+	floodfill(517,133,WHITE);
+	setfillstyle(7,5);
+	rectangle(522,135,542,152);//win1
+	floodfill(523,139,WHITE);
+	rectangle(522,185,542,202);//win2
+	floodfill(523,189,WHITE);
+	rectangle(522,236,542,253);//win3
+	floodfill(523,237,WHITE);
+	line(357,211,347,217);
+	line(347,217,204,217);
+	line(204,217,207,206);
+	line(359,215,346,222);
+	line(346,222,204,222);
+	rectangle(325,222,328,272);  //bottom thoon
+	rectangle(231,222,233,272);
+	setfillstyle(9,3);
+	rectangle(248,225,310,272); //door
+	floodfill(249,226,15);
+   //	line(231,272,0,480);
+   //	line(325,272,275,480);
+	line(33,272,590,272);//bottom line
+	setfillstyle(6,1);       //left window big border
+	floodfill(176,176,WHITE);
+	floodfill(425,176,15);
+	floodfill(382,164,15);
+	floodfill(217,170,15);
+	line(340,211,208,211);
+	line(120,242,230,242);
+	line(328,242,477,242);
+	setfillstyle(9,7);
+	floodfill(121,243,15);
+	floodfill(329,243,15);
+	setcolor(BROWN);
+  //	setlinestyle(1,1,3);
+	line(273,245,285,245);
+	setcolor(15);
+	settextstyle(8,0,3);
+	outtextxy(190,30,"Matriculation School");
+	settextstyle(3,0,1);
+i=0;j=280;i1=1;j1=280;
+while(i<630)
+{
+delay(100);
+putimage(i=i+4,j,buff,0);
+
+//Road
+line(0,433,640,433);
+line(10,445,640,445);
+line(0,433,10,445);
+line(640,445,640,433);
+setfillstyle(1,LIGHTGRAY);
+floodfill(8,434,15);
+line(140,445,140,472);
+line(140,472,150,478);
+line(150,478,162,478);
+line(150,478,150,445);
+line(162,478,162,445);
+floodfill(145,463,15);
+line(140+260,445,140+260,472);
+line(140+260,472,150+260,478);
+line(150+260,478,162+260,478);
+line(150+260,478,150+260,445);
+line(162+260,478,162+260,445);
+floodfill(145+260,463,15);
+
+line(0,363,561,363);
+line(561,363,561,350);
+line(561,350,222,350);
+line(222,350,222,273);
+line(0,368,566,368);
+line(566,368,566,345);
+line(566,345,232,345);
+line(232,345,222,350);
+line(232,345,232,273);
+line(566,345,561,350);
+line(561,363,566,368);
+floodfill(270,347,15);
+floodfill(131,366,15);
+//
+line(298,350,298,360);
+line(298,360,303,363);
+line(303,363,303,350);
+line(303,363,309,363);
+line(309,363,309,350);
+floodfill(300,354,15);
+line(298+150,350,298+150,360);
+line(298+150,360,303+150,363);
+line(303+150,363,303+150,350);
+line(303+150,363,309+150,363);
+line(309+150,363,309+150,350);
+floodfill(300+150,354,15);
+//highway
+rectangle(20,394,120,400);
+floodfill(21,395,15);
+rectangle(20+200,394,120+200,400);
+floodfill(21+200,395,15);
+rectangle(20,394,120,400);
+floodfill(21,395,15);
+rectangle(20+400,394,120+400,400);
+floodfill(21+400,395,15);
+rectangle(258,303,358,309);
+floodfill(259,304,15);
+rectangle(258+200,303,358+200,309);
+floodfill(259+200,304,15);
+rectangle(598,326,605,388);
+floodfill(599,327,15);
+delay(100);
+putimage(i1=i1+4,j1,buff1,0);
+//Road
+line(0,433,640,433);
+line(10,445,640,445);
+line(0,433,10,445);
+line(640,445,640,433);
+setfillstyle(1,LIGHTGRAY);
+floodfill(8,434,15);
+line(140,445,140,472);
+line(140,472,150,478);
+line(150,478,162,478);
+line(150,478,150,445);
+line(162,478,162,445);
+floodfill(145,463,15);
+line(140+260,445,140+260,472);
+line(140+260,472,150+260,478);
+line(150+260,478,162+260,478);
+line(150+260,478,150+260,445);
+line(162+260,478,162+260,445);
+floodfill(145+260,463,15);
+
+line(0,363,561,363);
+line(561,363,561,350);
+line(561,350,222,350);
+line(222,350,222,273);
+line(0,368,566,368);
+line(566,368,566,345);
+line(566,345,232,345);
+line(232,345,222,350);
+line(232,345,232,273);
+line(566,345,561,350);
+line(561,363,566,368);
+floodfill(270,347,15);
+floodfill(131,366,15);
+//
+line(298,350,298,360);
+line(298,360,303,363);
+line(303,363,303,350);
+line(303,363,309,363);
+line(309,363,309,350);
+floodfill(300,354,15);
+line(298+150,350,298+150,360);
+line(298+150,360,303+150,363);
+line(303+150,363,303+150,350);
+line(303+150,363,309+150,363);
+line(309+150,363,309+150,350);
+floodfill(300+150,354,15);
+//highway
+rectangle(20,394,120,400);
+floodfill(21,395,15);
+rectangle(20+200,394,120+200,400);
+floodfill(21+200,395,15);
+rectangle(20,394,120,400);
+floodfill(21,395,15);
+rectangle(20+400,394,120+400,400);
+floodfill(21+400,395,15);
+rectangle(258,303,358,309);
+floodfill(259,304,15);
+rectangle(258+200,303,358+200,309);
+floodfill(259+200,304,15);
+rectangle(598,326,605,388);
+floodfill(599,327,15);
+}
+delay(2000);
+cleardevice();
+/*  area1=imagesize(2,314,64,479);
+  buff1=(void *)malloc(area1);
+  getimage(2,314,64,479,buff1);
+  i=2;j=314;
+  while(j>285)
+  {
+  putimage(i=i+4,j=j-2,buff1,0);
+  delay(10);
+  }           */
+ delay(1000);
+	for(i=0;i<Max;i++)
+	{
+	if(i%2==0)
+	{
+		pshirt[i]-=250;
+		ptrou[i]-=250;
+		plleg[i]-=250;
+		prleg[i]-=250;
+		plhand[i]-=250;
+		prhand[i]-=250;
+	}
+	else{
+		pshirt[i]-=200;
+		ptrou[i]-=200;
+		plleg[i]-=200;
+		prleg[i]-=200;
+		plhand[i]-=200;
+		prhand[i]-=200;
+	    }
+	}
+		circle(429-250,335-200,11);
+		line(423-250,344-200,421-250,348-200);
+		line(435-250,344-200,436-250,348-200);
+		line(424-250,332-200,427-250,332-200);
+		line(431-250,332-200,436-250,332-200);
+		line(427-250,341-200,429-250,343-200);
+		line(429-250,343-200,432-250,341-200);
+		putpixel(425-250,336-200,WHITE);
+		putpixel(433-250,336-200,WHITE);
+		setfillstyle(1,15);
+		fillpoly(17,pshirt);
+		setfillstyle(1,1);
+		fillpoly(8,ptrou);
+		drawpoly(8,plleg);
+		drawpoly(9,prleg);
+		drawpoly(9,prhand);
+		drawpoly(9,plhand);
+	/*	area = imagesize(563,305,638,479);
+		buff=(void*)malloc(area);
+	/*	getimage(563,305,638,479,buff);
+		i= 563;j=305;
+		while(i>390)
+		{
+			putimage(i--,j,buff,COPY_PUT);
+			delay(10);
+		} */
+		delay(150);
+		outtextxy(100,75,"I wanna study this type of");
+		outtextxy(100,100,"standard education ma :-(");
+	       //	stfillsyle(0,BLACK);
+	       //	fillpoly(5,d);
+ delay(1000);
+ for(i=0;i<Max;i++)
+ {
+ if(i%2 == 1)
+ {
+  aface[i]-=150;
+  aeye[i]-=150;
+  apu[i]-=150;
+  ah1[i]-=150;
+  ah2[i]-=150;
+ }
+ else{
+  aface[i]-=50;
+  aeye[i]-=50;
+  apu[i]-=50;
+  ah1[i]-=50;
+  ah2[i]-=50;   }
+ }
+	setfillstyle(1,4);
+       drawpoly(38,aface);
+//     floodfill
+       drawpoly(13,aeye);
+       drawpoly(6,apu);
+       drawpoly(17,ah1);
+       drawpoly(9,ah2);
+       delay(150);
+       outtextxy(440,75,"We are not a rich");
+       outtextxy(440,100,"people ma...");
+	delay(5000);
+	cleardevice();
+	settextstyle(5,0,3);
+	outtextxy(100,100," Please Raise Ur Hand For Equitable Education ");
+	getch();
+	closegraph();
+	return 0;
+}
