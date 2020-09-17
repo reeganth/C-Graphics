@@ -3,8 +3,8 @@ C-Graphics
 
 C Graphics.. Need of Equitable Education
 
-Here the link for Screen Shot 
+Here is the Screen Shot 
 
-http://reeganth.blogspot.in/2013/07/c-graphics-animation-on-equitable.html
+![alt preview1](https://4.bp.blogspot.com/-bivOJNhPTdE/UdO6DQfSuEI/AAAAAAAAAOs/qwaasHmhb1Q/s646/eqed.png)
 
 thank u :)
